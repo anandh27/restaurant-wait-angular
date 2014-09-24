@@ -35,5 +35,17 @@ angular.module('myApp.controllers', [])
       party.notified = 'Yes';
       $scope.parties.$save(party.$id);
     };
-  }]);
+  }])
+.controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
+  var authRef = Firebase('https://waitandeat-tomb.firebaseio.com/');
+  var auth = $firebaseSimpleLogin(authRef);
+
+  $scope.user = {email: '', password: ''};
+
+  $scope.register = function() {
+    auth.$createUser($scope.user.email, $scope.user.password).then(function(data) {
+      console.log(data);
+    });
+  };
+}]);
 
