@@ -37,7 +37,7 @@ angular.module('myApp.controllers', [])
     };
   }])
 .controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
-  var authRef = Firebase('https://waitandeat-tomb.firebaseio.com/');
+  var authRef = new Firebase('https://waitandeat-tomb.firebaseio.com/');
   var auth = $firebaseSimpleLogin(authRef);
 
   $scope.user = {email: '', password: ''};
