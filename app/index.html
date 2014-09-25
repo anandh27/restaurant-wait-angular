@@ -17,7 +17,7 @@
 <body>
 
 <!-- Navbar that will stay on top of every page -->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div  ng-controller="AuthContoller" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,6 +32,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
             <a href="#">Log in</a>
+            </li>
+            <li>
+            <a href="#" ng-click="logout()">Log out</a>
             </li>
           </ul>
         </div><!--/.nav-collapse -->
