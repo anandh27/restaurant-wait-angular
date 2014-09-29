@@ -36,7 +36,7 @@ angular.module('myApp.controllers', [])
       $scope.parties.$save(party.$id);
     };
   }])
-.controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin) {
+.controller('AuthController', ['$scope', '$firebaseSimpleLogin', function($scope, $firebaseSimpleLogin, $location, FIREBASE_URL) {
   var authRef = new Firebase('https://waitandeat-tomb.firebaseio.com/');
   var auth = $firebaseSimpleLogin(authRef);
 
